@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 from tkinter import ttk
 
-# Process of swapping pixel values
+
 def encrypt_image(image, key):
     for i in range(0, len(image), 2):
         if i + 1 < len(image):
@@ -25,7 +25,6 @@ def handle_encryption():
 
     path = os.path.normpath(path)
 
-    # If the path is not there
     if not os.path.isfile(path):
         messagebox.showerror("Error", 'File not found, please check the path and try again.')
         return
@@ -47,7 +46,6 @@ def handle_encryption():
     if os.access(path, os.R_OK):
         try:
             with open(path, 'rb') as fin:
-                # Storing image data in variable "image"
                 image = fin.read()
         except Exception as e:
             messagebox.showerror("Error", f'Error reading the file: {e}')
